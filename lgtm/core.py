@@ -2,10 +2,13 @@
 import click
 
 @click.command()
+@click.option('--message', '-m', default='LGTM',
+              show_default=True, help='画像に乗せる文字列')
+@click.argument('keyword')
 def cli():
     """LGTM画像作成ツール"""
-    lgtm()
-    click.echo('lgtm')#動作確認用
+    lgtm(keyword, message)
+    click.echo('lgtm')
 
 def lgtm():
     #ここにロジックを追加していく
